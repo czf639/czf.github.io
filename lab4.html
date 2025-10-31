@@ -1,0 +1,427 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+        body {
+            font-family: "微软雅黑", sans-serif;
+            color: #4b4949;
+            min-width: 900px;
+        }
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #aad1ed;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            width: 300px;
+            height: 50px;
+            background-color: #111214;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        .caidan {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            z-index: 999;
+            min-width: 120px;
+        }
+        .caidan a {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav {
+            list-style: none;
+            display: flex;
+        }
+        .nav li {
+            margin-right: 20px;
+            position: relative;
+        }
+        .nav a {
+            color: #232020;
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        .nav a:hover {
+            color: #d95b5b; 
+        }
+        .nav li:hover .caidan{
+            display: block;
+        }
+        .container { 
+            width: 100%;
+            margin: 20px auto;
+            overflow: hidden; 
+        }
+        .left, .middle, .right {
+            float: left;
+            padding: 15px;
+            min-height: 400px; 
+        }
+        .left {
+            width: 20%;
+            background-color: #3682a9;
+            position: relative; 
+        }
+        .left h3 {
+            margin-bottom: 10px;
+        }
+        .left ul li {
+            margin: 10px 0;
+        }
+        .left a {
+            text-decoration: none;
+            color: #f0f0f0; 
+        }
+        .left a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .middle {
+            width: 55%;
+            margin: 0 2.5%;
+            background-color: #1f90bd;
+            border: 1px solid #ddd;
+            position: relative;
+            overflow: hidden; /* 隐藏超出容器的图片 */
+        }
+        .middle h3 {
+            margin: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+        
+        /* 轮播容器样式 */
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease; /* 平滑过渡效果 */
+            height: 300px; /* 固定轮播高度 */
+        }
+        
+        /* 图书项样式调整 */
+        .book {
+            min-width: 100%; /* 每个图书项占满容器宽度 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .book img {
+            max-width: 200px;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .book p {
+            color: #fff;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        .right {
+            width: 20%;
+            background-color: #90aebd;
+        }
+        .ad {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #a4a4a4;
+            cursor: help; 
+            background-color: rgba(255,255,255,0.1);
+        }
+        .ad h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        footer {
+            width: 100%;
+            height: 50px;
+            background-color: #aad1ed;
+            color: #333; 
+            text-align: center;
+            line-height: 50px; 
+            cursor: default; 
+            margin-top: 20px; 
+            clear: both;
+        }
+        .foot {
+            list-style: none;
+        }
+        
+        /* 轮播图指示器样式 */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background-color: #fff;
+            transform: scale(1.3);
+        }
+        
+        .indicator:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 轮播控制按钮 */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">书库Logo</div>
+            <ul class="nav">
+                <li><a href="#">首页</a>
+                    <div class="caidan">
+                        <a href="">热卖图书</a>
+                        <a href="">限时优惠</a>
+                    </div>
+                </li>
+                <li><a href="#">分类</a>
+                <div class="caidan">
+                    <a href="">传记</a>
+                    <a href="">政治</a>
+                    <a href="">历史</a>
+                    <a href="">小说</a>
+                </div></li>
+                <li><a href="#">新书</a>
+                <div class="caidan">
+                    <a href="">心理学微解析</a>
+                    <a href="">朝花夕拾</a>
+                    <a href="">狂人日记</a>
+                </div></li>
+                <li><a href="#">活动</a>
+                <div class="caidan">
+                    <a href="">减免</a>
+                </div></li>
+            </ul>
+        </header>
+
+        <div class="container"> 
+            <aside class="left">
+                <h3>图书分类</h3>
+                <ul>
+                    <li><a href="#">小说 散文</a></li>
+                    <li><a href="#">科普类</a></li>
+                    <li><a href="#">历史类</a></li>
+                    <li><a href="#">艺术类</a></li>
+                </ul>
+                <h3>热卖榜单</h3>
+                <ul type="1">
+                    <li><a href="">三体<br>售价289</a></li>
+                    <li><a href="">十万个为什么<br>售价28</a></li>
+                    <li><a href="">完美世界<br>售价59</a></li>
+                </ul>
+            </aside>
+
+            <section class="middle">
+                <h3>热门图书</h3>
+                
+                <!-- 轮播容器 -->
+                <div class="carousel-container">
+                    <div class="book">
+                        <img src="ls.jpg" alt="图书1：历史类书籍">
+                        <p>售价49元</p>
+                    </div>
+                    <div class="book">
+                        <img src="py.jpg" alt="图书2：科普类书籍">
+                        <p>售价39元</p>
+                    </div>
+                    <div class="book">
+                        <img src="ys.jpg" alt="图书3：文学类书籍">
+                        <p>售价59元</p>
+                    </div>
+                </div>
+                
+                <!-- 轮播控制按钮 -->
+                <button class="carousel-control prev">←</button>
+                <button class="carousel-control next">→</button>
+                
+                <!-- 轮播图指示器 -->
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-index="0"></div>
+                    <div class="indicator" data-index="1"></div>
+                    <div class="indicator" data-index="2"></div>
+                </div>
+            </section>
+
+            <aside class="right">
+                <div class="ad">
+                    <h3>限时优惠</h3>
+                    <p>全场满99999减20，速来抢购！</p>
+                </div>
+                <div class="ad">
+                    <h3>新人福利</h3>
+                    <p>注册即送0.005元购书券！</p>
+                </div>
+                <div class="ad">
+                    <h3>限时活动</h3>
+                    <p>本店消费满99元赠送一本《世界大全》</p>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <div>
+                <ul class="foot">
+                    <li>关于我们 售后联系 2649007726@qq.com</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 轮播功能实现
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel-container');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentIndex = 0;
+            const totalSlides = indicators.length;
+            let slideInterval;
+            
+            // 初始化自动轮播
+            startSlideInterval();
+            
+            // 切换到指定索引的轮播项
+            function goToSlide(index) {
+                // 确保索引在有效范围内
+                if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+                
+                // 移动轮播容器
+                const offset = -currentIndex * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+                
+                // 更新指示器状态
+                indicators.forEach((indicator, i) => {
+                    if (i === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 下一张
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+                resetSlideInterval(); // 重置自动轮播计时器
+            }
+            
+            // 上一张
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+                resetSlideInterval(); // 重置自动轮播计时器
+            }
+            
+            // 开始自动轮播
+            function startSlideInterval() {
+                slideInterval = setInterval(nextSlide, 3000); // 每3秒切换一次
+            }
+            
+            // 重置自动轮播计时器
+            function resetSlideInterval() {
+                clearInterval(slideInterval);
+                startSlideInterval();
+            }
+            
+            // 为指示器添加点击事件
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    goToSlide(index);
+                    resetSlideInterval(); // 重置自动轮播计时器
+                });
+            });
+            
+            // 为控制按钮添加点击事件
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // 鼠标悬停时暂停轮播，离开时继续
+            const middleSection = document.querySelector('.middle');
+            middleSection.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            middleSection.addEventListener('mouseleave', () => {
+                startSlideInterval();
+            });
+        });
+    </script>
+</body>
+</html>
