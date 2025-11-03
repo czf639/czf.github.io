@@ -1,20 +1,25 @@
-* {
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box; 
         }
         body {
-            font-family: "微软雅黑", sans-serif;
-            color: #4b4949;
-            min-width: 900px;
+            font-family: "微软雅黑", "PingFang SC", sans-serif;
+            color: #333;
+            background-color: #f0f8ff; /* 浅蓝主背景 */
+            padding-top: 80px; /* 适配固定导航 */
         }
+        /* 主容器 */
         .wrapper {
-            width: 80%;  
+            width: 95%;  
+            max-width: 1400px;
             margin: 0 auto; 
         }
+        /* 导航栏 */
         .header {
-            background-color: #aad1ed;
-            padding: 20px;
+            background-color: #fff;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -23,28 +28,45 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            width: 80%;
-            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.2); /* 浅蓝阴影 */
         }
+        /* Logo */
         .logo {
-            width: 300px;
-            height: 50px;
-            background-color: #111214;
-            color: #fff;
-            text-align: center;
-            line-height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             cursor: pointer;
         }
+        .logo i {
+            font-size: 28px;
+            color: #4299e1; /* 浅蓝色图标 */
+        }
+        .logo-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        /* 购物车 */
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #4299e1;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        /* 导航菜单 */
         .caidan {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(144, 202, 249, 0.15);
             padding: 10px 0;
             z-index: 999;
-            min-width: 120px;
+            min-width: 150px;
+            border-radius: 0 0 8px 8px;
         }
         .caidan a {
             display: block;
@@ -52,172 +74,308 @@
             color: #333;
             text-decoration: none;
         }
+        .caidan a:hover {
+            background-color: #e8f4f8; /* 浅蓝hover背景 */
+        }
         .nav {
             list-style: none;
             display: flex;
         }
         .nav li {
-            margin-right: 20px;
+            margin-right: 25px;
             position: relative;
+            padding: 8px 0;
         }
         .nav a {
-            color: #232020;
+            color: #2d3748;
             text-decoration: none; 
             font-weight: 500;
+            font-size: 15px;
         }
         .nav a:hover {
-            color: #d95b5b; 
+            color: #4299e1; /* 浅蓝色强调 */
         }
         .nav li:hover .caidan{
             display: block;
         }
+        /* 主内容区 */
         .container { 
             width: 100%;
-            margin: 100px auto 20px;
-            overflow: hidden; 
+            margin: 20px auto 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .left, .middle, .right {
-            float: left;
-            padding: 15px;
-            min-height: 400px; 
-        }
+        /* 左侧分类区 */
         .left { 
-            overflow: auto;
-            color: rgba(0,255,255,1);
-            width: 20%;
-            background-color: #3682a9;
-            position: relative; 
+            width: 18%;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.15);
+            flex-shrink: 0;
         }
         .left h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .left h3 i {
+            color: #4299e1;
+        }
+        .left ul {
+            list-style: none;
+            margin-bottom: 25px;
         }
         .left ul li {
-            margin: 10px 0;
+            margin: 12px 0;
             position: relative;
-           text-emphasis: none;
         }
         .xinxi{
-            background-color: #111214;
             display: none;
             position: absolute;
+            left: 100%;
+            top: 0;
+            width: 280px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.2);
+            border-radius: 0 8px 8px 0;
+            padding: 15px;
             z-index: 999;
         }
         .xinxi a {
-            padding: 8px 16px;
-            color: #333;
+            color: #666;
             text-decoration: none;
-            z-index: 1000;
-            overflow: auto;
-            
+            font-size: 14px;
+            line-height: 1.6;
         }
         .left li:hover .xinxi {
             display: block;
-            color: #1f90bd; 
-            background-color: #1f90bd;
         }
-
-        .left  a {  
+        .left a {  
             text-decoration: none;
-            color: #dbd6d6; 
+            color: #666; 
+            font-size: 14px;
         }
         .left a:hover {
-            color: #d21010;
-            text-decoration:none;
+            color: #4299e1;
         }
+        /* 中间图书区 */
         .middle {
-            width: 55%;
-            margin: 0 2.5%;
-            background-color: #1f90bd;
-            border: 1px solid #ddd;
+            width: 48%;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.15);
+            flex-grow: 1;
         }
         .middle h3 {
-            margin: 20px 0;
-            color: #fff;
+            margin: 0 0 25px 0;
+            font-size: 18px;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+        .middle h3 i {
+            color: #4299e1;
+        }
+        /* 图书列表 */
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        /* 图书卡片 */
         .book {
-            float: left; 
-            width: 30%;
-            margin: 1.5%;
-            border: 1px solid #eee;
-            padding: 10px;
+            width: calc(33.33% - 14px);
+            border: 1px solid #e8f4f8; /* 浅蓝边框 */
+            border-radius: 8px;
+            padding: 15px;
             cursor: pointer;
             text-align: center;
-            background-color: rgba(255,255,255,0.1);
+            background-color: #fff;
             position: relative;
-            height: 250px; 
+            height: 280px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-             .book::after{
-            content: '';
-            position:absolute;
-            top: 10px;
-            left:10px;
-            right: 10px;
-            bottom:10px;
-            background-color: rgba(0,0,0,0.3); 
-            opacity: 0; 
-            transition: opacity 0.3s ease; 
-            pointer-events: none;
-        }
-        .book:hover::after{
-            opacity:1;
+        .book:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(144, 202, 249, 0.2);
+            border-color: #4299e1;
+            z-index: 1111;
         }
         .book img {
-            width: 100%; 
-            height: 220px; 
-            margin-bottom: 10px;
+            width: 100%;
+            height: 180px;
+            margin-bottom: 12px;
             object-fit: contain;
-            background-color: #fff;
-
+            background-color: #f8fafc;
+            border-radius: 4px;
         }
-        .book p {
-            color: #fff;
-            font-weight: 500;
+        .book-author {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 5px;
         }
-        .book .xinxi{
+        .book-price {
+            color: #3182ce; /* 蓝色价格 */
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: auto;
+        }
+        .book-rating {
+            color: #4299e1; /* 浅蓝色星星 */
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .book .xinxi {
             display: none;
-            background-color: #d4d8da;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(144, 202, 249, 0.2);
+            border-radius: 0 0 8px 8px;
+            padding: 12px;
+            z-index: 10;
+            border-top: 1px solid #4299e1;
         }
-        .book img:hover + p + .xinxi {
-         display: block;
+        .book:hover .xinxi {
+            display: block;
         }
-
-        .book:hover img {
-            transform: scale(1.3); 
-        } 
-
-        .book img:hover{
-            opacity:0.57 ;
-        }        
-        .right {color: rgba(250,20,0,0.8);
-            width: 20%;
-            background-color: #90aebd;
+        /* 右侧功能区 */
+        .right {
+            width: 26%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-shrink: 0;
         }
-        .ad {
+        /* 优惠广告 */
+        .ad-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.15);
+        }
+        .ad-section h3 {
             margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #a4a4a4;
-            cursor: help; 
-            background-color: rgba(255,255,255,0.1);
+            font-size: 16px;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .ad h3 {
-            margin-bottom: 8px;
-            color: #333;
+        .ad-section h3 i {
+            color: #4299e1;
         }
+        .ad-card {
+            background-color: #e8f4f8;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #f9fcff;
+        }
+        .ad-card p {
+            font-size: 14px;
+            color: #090e0e;
+            line-height: 1.5;
+        }
+        .ad-card .ad-tag {
+            color: #4299e1;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        /* 热门标签 */
+        .tag-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.15);
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .tag {
+            padding: 6px 12px;
+            background-color: #e8f4f8;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #4299e1;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tag:hover {
+            background-color: #4299e1;
+            color: #fff;
+        }
+        /* 底部 */
         footer {
             width: 100%;
-            height: 50px;
-            background-color: #aad1ed;
-            color: #333; 
-            text-align: center;
-            line-height: 50px; 
-            cursor: default; 
-            margin-top: 20px; 
+            background-color: #fff;
+            color: #666;
+            padding: 30px 0;
+            box-shadow: 0 -2px 8px rgba(144, 202, 249, 0.15);
+            margin-top: 20px;
         }
-        .foot {
+        .footer-content {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-col {
+            width: 22%;
+            min-width: 150px;
+        }
+        .footer-col h4 {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-col h4 i {
+            color: #4299e1;
+        }
+        .footer-col ul {
             list-style: none;
         }
-       
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+        .footer-col a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer-col a:hover {
+            color: #4299e1;
+        }
+        .footer-col li a i {
+            color: #4299e1;
+            margin-right: 5px;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #e8f4f8;
+            font-size: 13px;
+            color: #718096;
+        }
+    
