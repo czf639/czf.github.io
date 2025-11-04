@@ -28,7 +28,8 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.2); /* 浅蓝阴影 */
+            box-shadow: 0 2px 8px rgba(144, 202, 249, 0.2); 
+            z-index: 1002;
         }
         /* Logo */
         .logo {
@@ -209,7 +210,7 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(144, 202, 249, 0.2);
             border-color: #4299e1;
-            z-index: 1111;
+            z-index: 1001;
         }
         .book img {
             width: 100%;
@@ -231,7 +232,7 @@
             margin-top: auto;
         }
         .book-rating {
-            color: #4299e1; /* 浅蓝色星星 */
+            color: #4299e1; 
             font-size: 12px;
             margin-bottom: 5px;
         }
