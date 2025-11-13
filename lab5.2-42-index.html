@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -191,4 +192,199 @@
         </form>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            
+            background: linear-gradient(135deg, #247b9b 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        /* 表单容器样式 - 卡片化设计 */
+        .login-container {
+
+            width: 100%;
+            max-width: 420px;
+            background-color: #fff;
+           position: absolute ;
+            top: 20%;;
+            left: 40%;
+            padding: 40px 30px;
+          
+        }
+
+
+
+
+
+        .login-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+   
+
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #555;
+            
+        }
+
+        .form-control {
+            width: 100%;
+            height: 45px;
+            padding: 0 55px;
+            border: 1px solid #ddd;
+            
+            font-size: 14px;
+            color: #333;
+            
+            
+        }
+
+        /* 输入框聚焦/hover 状态 */
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        .form-control:hover {
+            border-color: #ccc;
+        }
+
+    
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .remember-me label {
+            color: #555;
+            cursor: pointer;
+           
+        }
+
+        .remember-me label:hover {
+            color: #667eea;
+        }
+
+    
+        .link-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .link-group a {
+            font-size: 13px;
+            color: #667eea;
+          
+            
+        }
+
+        .link-group a:hover {
+            color: #764ba2;
+           
+        }
+
+    
+        .btn-login {
+            width: 100%;
+            height: 48px;
+            background-color: #764ba2;
+            border-radius: 55px;
+            
+            color: #ccc;
+            font-size: 16px;
+            
+            cursor: pointer;
+           
+        }
+
+
+       
+
+    
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+         <i class="fa-solid fa-right-to-bracket"></i>
+        <h2 class="login-title">登录</h2>
+        <form action="lab5-42-index.html" method="post" name="login" class="login-form">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" class="form-control" >
+            </div>
+
+          
+            <div class="form-group">
+                <label for="userword">密码</label>
+                <input type="password" id="userword" name="userword" class="form-control"  >
+            </div>
+
+           
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email" class="form-control"  >
+            </div>
+
+          
+            <div class="remember-me">
+                <input type="checkbox" id="jizhu" name="jizhu">
+                <label for="jizhu">记住我</label>
+            </div>
+
+            
+            <div class="link-group">
+                <a href="#" title="找回密码">忘记密码？</a>
+                <a href="#" title="注册账号">立即注册</a>
+            </div>
+
+           
+            <button type="submit" class="btn-login">登录</button>
+        </form>
+    </div>
+</body>
+>>>>>>> c15478343f4600a7a12128fcd52c304108d5bf79
 </html>
