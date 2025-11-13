@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>页面布局</title>
     <link rel="stylesheet" href="/css/lab-42.css"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
 <body>
     <div class="wrapper">
@@ -49,8 +50,11 @@
                         <a href="">按热度排序</a>
                     </div>
                 </li>
+                
             </ul>
             <div class="cart">
+               <i class="fa-solid fa-right-to-bracket"></i>
+              <a href="lab5.2-42-index.html">登录/注册</a>
                 <i class="fa fa-shopping-cart"></i>
                 <span>购物车(0)</span>
             </div>
@@ -60,13 +64,15 @@
             <aside class="left">
                 <h3><i class="fa fa-list"></i> 图书分类</h3>
                 <ul>
-                    <li><a href="#">小说 散文</a></li>
-                    <li><a href="#">科普类</a></li>
-                    <li><a href="#">历史类</a></li>
-                    <li><a href="#">艺术类</a></li>
-                    <li><a href="#">传记类</a></li>
-                    <li><a href="#">政治类</a></li>
-                    <li><a href="#">心理学</a></li>
+                    
+
+                    <li><i class="fa-solid fa-book"></i><a href="#">小说 散文</a></li>
+                    <li><i class="fa-solid fa-flask"></i><a href="#">科普类</a></li>
+                    <li><i class="fa-solid fa-book-medical"></i><a href="#">历史类</a></li>
+                    <li><i class="fa-brands fa-artstation"></i><a href="#">艺术类</a></li>
+                    <li><i class="fa-solid fa-book-atlas"></i><a href="#">传记类</a></li>
+                    <li><i class="fa-solid fa-landmark"></i><a href="#">政治类</a></li>
+                    <li><i class="fa-solid fa-heart"></i><a href="#">心理学</a></li>
                 </ul>
 
                 <h3><i class="fa fa-fire"></i> 热卖榜单</h3>
@@ -144,33 +150,8 @@
                             作者是邓稼先的家人，“两弹一星元勋”之外，还原一个真实可触的邓稼先：爱看京剧、和儿子比赛放爆竹、背牛津词典……一位付出一生奉献人民和国家的科学家。
                         </div>
                     </div>
-                    <div class="book">
-                        <img src="http://image31.bookschina.com/2025/zuo/10/B8008111.jpg" alt="图书7">
-                        <div class="book-author">中国梦</div>
-                        
-                        <p class="book-price">¥49.00</p>
-                        <div class="xinxi">
-                            作者：马建邦 出版社：河北美术出版社 出版时间：2018-05-01
-                        </div>
-                    </div>
-                    <div class="book">
-                        <img src="http://image31.bookschina.com/2018/zuo/7/B7599010.jpg" alt="图书8">
-                        <div class="book-author">诗词三百首</div>
-                       
-                        <p class="book-price">¥49.00</p>
-                        <div class="xinxi">
-                            选取了自元至清的诸多名家名篇，诸多词作个性鲜明、寄寓深远，既有艺术价值亦具史料价值，其成就在文学史上占有重要地位。
-                        </div>
-                    </div>
-                    <div class="book">
-                        <img src="http://image12.bookschina.com/2017/20170605/B7486525.jpg" alt="图书9">
-                        <div class="book-author">会说话的历史</div>
-                        
-                        <p class="book-price">¥49.00</p>
-                        <div class="xinxi">
-                            隐藏在远古时代的艺术、歌曲和建筑之中的每一个神话、童话、传说的背后都是历史流传下来的智慧，翻开本书看“会说话”的历史如何解读古人的智慧。
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </section>
 
@@ -222,8 +203,75 @@
                 </div>
             </aside>
         </div>
+        <form>
+        <div class="salebook">
+            <h3>订阅书籍</h3>
+             <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" class="form-control" >
+            </div>
+             <div class="form-group">
+                <label for="userword">密码</label>
+                <input type="password" id="userword" name="userword" class="form-control"  >
+            </div>
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email" class="form-control"  >
+            </div>
+            <div class="">性别：男
+                <input type="radio" name="nannv">女<input type="radio" name="nannv">
+            </div>
+            <div>兴趣/阅读意向：
+                &nbsp;灵异恐怖<input type="checkbox">&nbsp;&nbsp;哲学思辨<input type="checkbox">&nbsp;&nbsp;传统历史<input type="checkbox">&nbsp;&nbsp;科幻小说<input type="checkbox">&nbsp;&nbsp;名家经典<input type="checkbox">
+            </div>
+            <div>
+              城市<select name="cities" id="citied">
+                <optgroup label="城市">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+   
+         </optgroup>
+                <optgroup label="山东省">山东省</optgroup>
+                <option value="">烟台</option>
+                 <option value="">青岛</option>
+                 <option value="">济南</option>
+                 <option value="">枣庄</option>
+                 <option value="">菏泽</option>
+                 <option value="">潍坊</option>
+                 <option value="">泰安</option>
+                 <option value="">临沂</option>
+                 <option value="">济宁</option>
+                 <optgroup label="河北省"></optgroup>
+                 <option value="">石家庄</option><option value="">保定</option>
+                 <option value="">秦皇岛</option>
 
-        <footer>
+              </select>
+              图书购买分类<select name="tushufenlei" id="tushufenlei">
+                <option value="">全新</option>
+                <option value="">二手</option>
+                <option value="">多次使用</option>
+
+                
+              </select>
+            </div>
+            <div>
+                <textarea name="liuyan" id="liuyan" rows="6" cols="80" value="">请输入您意向书籍的名称、出版社以及相关信息，以便我们更快帮您寻找！上传图书文件会让我们速度更快哦 ！
+                </textarea>
+            </div>
+            <div>
+                <input type="file" multiple>
+               
+            </div>
+            <div>
+                
+           <input type="submit">
+           <input type="reset">
+            </div>
+
+
+        </div></form>
+
+        
             <div class="footer-content">
                 <div class="footer-col">
                     <h4><i class="fa fa-info-circle"></i> 关于我们</h4>

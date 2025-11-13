@@ -10,13 +10,13 @@
             background-color: #f0f8ff; /* 浅蓝主背景 */
             padding-top: 80px; /* 适配固定导航 */
         }
-        /* 主容器 */
+        
         .wrapper {
             width: 95%;  
             max-width: 1400px;
             margin: 0 auto; 
         }
-        /* 导航栏 */
+       
         .header {
             background-color: #fff;
             padding: 15px 20px;
@@ -31,7 +31,11 @@
             box-shadow: 0 2px 8px rgba(144, 202, 249, 0.2); 
             z-index: 1002;
         }
-        /* Logo */
+        .a{
+            text-decoration: none;
+             color: #667eea
+        }
+        
         .logo {
             display: flex;
             align-items: center;
@@ -40,14 +44,14 @@
         }
         .logo i {
             font-size: 28px;
-            color: #4299e1; /* 浅蓝色图标 */
+            color: #4299e1; 
         }
         .logo-text {
             font-size: 22px;
             font-weight: bold;
             color: #2d3748;
         }
-        /* 购物车 */
+        
         .cart {
             display: flex;
             align-items: center;
@@ -56,7 +60,7 @@
             cursor: pointer;
             font-size: 14px;
         }
-        /* 导航菜单 */
+        
         .caidan {
             display: none;
             position: absolute;
@@ -76,30 +80,31 @@
             text-decoration: none;
         }
         .caidan a:hover {
-            background-color: #e8f4f8; /* 浅蓝hover背景 */
+            background-color: #e8f4f8; 
         }
         .nav {
             list-style: none;
             display: flex;
         }
         .nav li {
-            margin-right: 25px;
+            margin-right: 50px;
             position: relative;
             padding: 8px 0;
         }
         .nav a {
+            
             color: #2d3748;
             text-decoration: none; 
             font-weight: 500;
-            font-size: 15px;
+            font-size: 20px;
         }
         .nav a:hover {
-            color: #4299e1; /* 浅蓝色强调 */
+            color: #4299e1; 
         }
         .nav li:hover .caidan{
             display: block;
         }
-        /* 主内容区 */
+        
         .container { 
             width: 100%;
             margin: 20px auto 30px;
@@ -107,7 +112,7 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-        /* 左侧分类区 */
+        
         .left { 
             width: 18%;
             background-color: #fff;
@@ -164,7 +169,7 @@
         .left a:hover {
             color: #4299e1;
         }
-        /* 中间图书区 */
+       
         .middle {
             width: 48%;
             background-color: #fff;
@@ -184,16 +189,16 @@
         .middle h3 i {
             color: #4299e1;
         }
-        /* 图书列表 */
+        
         .book-list {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
-        /* 图书卡片 */
+    
         .book {
             width: calc(33.33% - 14px);
-            border: 1px solid #e8f4f8; /* 浅蓝边框 */
+            border: 1px solid #e8f4f8; 
             border-radius: 8px;
             padding: 15px;
             cursor: pointer;
@@ -226,7 +231,7 @@
             margin-bottom: 5px;
         }
         .book-price {
-            color: #3182ce; /* 蓝色价格 */
+            color: #3182ce; 
             font-weight: bold;
             font-size: 15px;
             margin-top: auto;
@@ -252,7 +257,7 @@
         .book:hover .xinxi {
             display: block;
         }
-        /* 右侧功能区 */
+        
         .right {
             width: 26%;
             display: flex;
@@ -260,7 +265,7 @@
             gap: 20px;
             flex-shrink: 0;
         }
-        /* 优惠广告 */
+     
         .ad-section {
             background-color: #fff;
             border-radius: 8px;
@@ -295,7 +300,7 @@
             font-weight: bold;
             margin-right: 5px;
         }
-        /* 热门标签 */
+      
         .tag-section {
             background-color: #fff;
             border-radius: 8px;
@@ -320,7 +325,7 @@
             background-color: #4299e1;
             color: #fff;
         }
-        /* 底部 */
+    
         footer {
             width: 100%;
             background-color: #fff;
@@ -379,4 +384,125 @@
             font-size: 13px;
             color: #718096;
         }
+    .salebook{
+        width: 100%;
+        max-width: 800px;
+        background-color: #ffffff;
+        position: relative;
+        margin: 0 auto 30px;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(144, 202, 249, 0.18); 
+        font-family: "微软雅黑", "PingFang SC", sans-serif;
+    }
+    .salebook.h3{
+        text-align: center; 
+        font-size: 20px;
+        color: #2d3748;
+        margin: 0 0 25px; 
+        padding-bottom: 12px;
+        border-bottom: 2px solid #e8f4f8; 
+        font-weight: 600;
+
     
+    }
+    .salebook .form-group {
+    margin-bottom: 22px; 
+}
+      .salebook .form-control {
+    width: calc(100% - 95px); 
+    height: 42px; 
+    padding: 0 18px; 
+    border: 1px solid #c6e0f7; 
+    border-radius: 8px; 
+    font-size: 14px;
+    color: #2d3748;
+    
+}    
+     
+    .salebook input[type="radio"] {
+    
+    vertical-align: middle; 
+}
+           
+        .salebook input[type="checkbox"] {
+ 
+    vertical-align: middle;
+}          
+           .salebook select {
+    height: 28px;
+    padding: 0 8px;
+    
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2d3748;
+    background-color: #fff;
+    
+    
+}
+        
+      .salebook textarea {
+    
+    min-height: 120px;
+    padding: 12px 18px;
+    border: 1px solid #c6e0f7;
+    border-radius: 8px; 
+    font-size: 14px;
+    color: #2d3748;
+    
+    
+}          
+
+.salebook input[type="file"] {
+    margin-bottom: 22px;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+
+.salebook input[type="submit"],
+.salebook input[type="reset"] {
+    padding: 10px 28px;
+    
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+  
+    cursor: pointer;
+    
+}
+
+
+.salebook input[type="submit"] {
+    background-color: #4299e1;
+    color: #fff;
+}
+
+.salebook input[type="submit"]:hover {
+    background-color: #3182ce; 
+    
+}
+
+
+.salebook input[type="reset"] {
+    background-color: #e8f4f8;
+    color: #4a5568;
+}
+
+.salebook input[type="reset"]:hover {
+    background-color: #d1e7dd; 
+    cursor: pointer;
+}
+
+     .form-control {
+            width: 100%;
+            height: 32px;
+            padding: 0 55px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #333;
+     }
+     .salebook.textarea{
+        border-radius: 50px;
+     }
