@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>页面布局</title>
-    <link rel="stylesheet" href="css/lab-42.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="./css/lab5.css">
 </head>
 <body>
     <div class="wrapper">
@@ -50,13 +49,22 @@
                         <a href="">按热度排序</a>
                     </div>
                 </li>
-                
+                <li>
+                    <button class="cart-btn" id="subscribeBtn">
+                        <i class="fa fa-book"></i>
+                        订阅书籍
+                    </button>
+                </li>
             </ul>
             <div class="cart">
-               <i class="fa-solid fa-right-to-bracket"></i>
-              <a href="lab5.2-42-index.html">登录/注册</a>
-                <i class="fa fa-shopping-cart"></i>
-                <span>购物车(0)</span>
+                <button class="cart-btn" id="loginBtn">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    登录/注册
+                </button>
+                <div class="cart-icon">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车(0)</span>
+                </div>
             </div>
         </header>
 
@@ -64,8 +72,6 @@
             <aside class="left">
                 <h3><i class="fa fa-list"></i> 图书分类</h3>
                 <ul>
-                    
-
                     <li><i class="fa-solid fa-book"></i><a href="#">小说 散文</a></li>
                     <li><i class="fa-solid fa-flask"></i><a href="#">科普类</a></li>
                     <li><i class="fa-solid fa-book-medical"></i><a href="#">历史类</a></li>
@@ -101,16 +107,14 @@
                     <div class="book">
                         <img src="img/ls.jpg" alt="图书1">
                         <div class="book-author">世界历史大全</div>
-                       
                         <p class="book-price">¥49.00</p>
                         <div class="xinxi">
                             创始人是扬·凡德克拉本（Jan van der Crabben），他于2009年创立了该百科全书。
                         </div>
                     </div>
                     <div class="book">
-                        <img src="img/py.jpg"图书2">
+                        <img src="img/py.jpg" alt="图书2">
                         <div class="book-author">Python编程 从入门到实践</div>
-                      
                         <p class="book-price">¥39.00</p>
                         <div class="xinxi">
                             《Python编程 从入门到实践》是2016年人民邮电出版社出版的图书，作者是Eric Matthes。
@@ -119,14 +123,11 @@
                     <div class="book">
                         <img src="img/ys.jpg" alt="图书3">
                         <div class="book-author">艺术的故事</div>
-                        
                         <p class="book-price">¥59.00</p>
-                        
                     </div>
                     <div class="book">
                         <img src="https://imgt.bookschina.com/2025/10/5929854ct01a.jpg" alt="图书4">
                         <div class="book-author">365个中国故事</div>
-                        
                         <p class="book-price">¥49.00</p>
                         <div class="xinxi">
                             每部选取365个中国故事，涉及神话、民俗、传说、寓言故事，儒、释、道、法、墨、纵横家等诸子百家故事；每日一句国学金句，全年共365条，均配有贴心译文。
@@ -135,7 +136,6 @@
                     <div class="book">
                         <img src="http://image12.bookschina.com/2022/20221114/1/B8607989.jpg" alt="图书5">
                         <div class="book-author">中国人的精神生活</div>
-                        
                         <p class="book-price">¥49.00</p>
                         <div class="xinxi">
                             本书揭示中国人的精神生活，宣扬中国传统文化的价值，是一战前后世界范围内兴起的东方文化思潮的代表作之一。
@@ -144,14 +144,11 @@
                     <div class="book">
                         <img src="http://image12.bookschina.com/2015/20150215/B6781583.jpg" alt="图书6">
                         <div class="book-author">邓稼先传</div>
-                        
                         <p class="book-price">¥49.00</p>
                         <div class="xinxi">
                             作者是邓稼先的家人，“两弹一星元勋”之外，还原一个真实可触的邓稼先：爱看京剧、和儿子比赛放爆竹、背牛津词典……一位付出一生奉献人民和国家的科学家。
                         </div>
                     </div>
-                    
-                    
                 </div>
             </section>
 
@@ -203,75 +200,8 @@
                 </div>
             </aside>
         </div>
-        <form>
-        <div class="salebook">
-            <h3>订阅书籍</h3>
-             <div class="form-group">
-                <label for="username">用户名</label>
-                <input type="text" id="username" name="username" class="form-control" >
-            </div>
-             <div class="form-group">
-                <label for="userword">密码</label>
-                <input type="password" id="userword" name="userword" class="form-control"  >
-            </div>
-            <div class="form-group">
-                <label for="email">邮箱</label>
-                <input type="email" id="email" name="email" class="form-control"  >
-            </div>
-            <div class="">性别：男
-                <input type="radio" name="nannv">女<input type="radio" name="nannv">
-            </div>
-            <div>兴趣/阅读意向：
-                &nbsp;灵异恐怖<input type="checkbox">&nbsp;&nbsp;哲学思辨<input type="checkbox">&nbsp;&nbsp;传统历史<input type="checkbox">&nbsp;&nbsp;科幻小说<input type="checkbox">&nbsp;&nbsp;名家经典<input type="checkbox">
-            </div>
-            <div>
-              城市<select name="cities" id="citied">
-                <optgroup label="城市">
-                <option value="beijing">北京</option>
-                <option value="shanghai">上海</option>
-   
-         </optgroup>
-                <optgroup label="山东省">山东省</optgroup>
-                <option value="">烟台</option>
-                 <option value="">青岛</option>
-                 <option value="">济南</option>
-                 <option value="">枣庄</option>
-                 <option value="">菏泽</option>
-                 <option value="">潍坊</option>
-                 <option value="">泰安</option>
-                 <option value="">临沂</option>
-                 <option value="">济宁</option>
-                 <optgroup label="河北省"></optgroup>
-                 <option value="">石家庄</option><option value="">保定</option>
-                 <option value="">秦皇岛</option>
 
-              </select>
-              图书购买分类<select name="tushufenlei" id="tushufenlei">
-                <option value="">全新</option>
-                <option value="">二手</option>
-                <option value="">多次使用</option>
-
-                
-              </select>
-            </div>
-            <div>
-                <textarea name="liuyan" id="liuyan" rows="6" cols="80" value="">请输入您意向书籍的名称、出版社以及相关信息，以便我们更快帮您寻找！上传图书文件会让我们速度更快哦 ！
-                </textarea>
-            </div>
-            <div>
-                <input type="file" multiple>
-               
-            </div>
-            <div>
-                
-           <input type="submit">
-           <input type="reset">
-            </div>
-
-
-        </div></form>
-
-        
+        <footer>
             <div class="footer-content">
                 <div class="footer-col">
                     <h4><i class="fa fa-info-circle"></i> 关于我们</h4>
@@ -295,8 +225,154 @@
                     </ul>
                 </div>
             </div>
-          
         </footer>
     </div>
+
+
+    <div class="modal-overlay" id="subscribeModal">
+        <div class="modal subscribe-modal">
+            <button class="close-modal" id="closeSubscribeModal">&times;</button>
+            <form>
+                <h3>订阅书籍</h3>
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="userword">密码</label>
+                    <input type="password" id="userword" name="userword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    性别：
+                    <label><input type="radio" name="nannv" value="male"> 男</label>
+                    <label><input type="radio" name="nannv" value="female"> 女</label>
+                </div>
+                <div class="form-group">
+                    兴趣/阅读意向：
+                    <label><input type="checkbox" name="interest" value="horror"> 灵异恐怖</label>
+                    <label><input type="checkbox" name="interest" value="philosophy"> 哲学思辨</label>
+                    <label><input type="checkbox" name="interest" value="history"> 传统历史</label>
+                    <label><input type="checkbox" name="interest" value="scifi"> 科幻小说</label>
+                    <label><input type="checkbox" name="interest" value="classic"> 名家经典</label>
+                </div>
+                <div class="form-group">
+                    <label>城市</label>
+                    <select name="cities" id="citied" class="form-control">
+                        <optgroup label="直辖市">
+                            <option value="beijing">北京</option>
+                            <option value="shanghai">上海</option>
+                        </optgroup>
+                        <optgroup label="山东省">
+                            <option value="yantai">烟台</option>
+                            <option value="qingdao">青岛</option>
+                            <option value="jinan">济南</option>
+                            <option value="zaozhuang">枣庄</option>
+                            <option value="heze">菏泽</option>
+                            <option value="weifang">潍坊</option>
+                            <option value="tai'an">泰安</option>
+                            <option value="linyi">临沂</option>
+                            <option value="jining">济宁</option>
+                        </optgroup>
+                        <optgroup label="河北省">
+                            <option value="shijiazhuang">石家庄</option>
+                            <option value="baoding">保定</option>
+                            <option value="qinhuangdao">秦皇岛</option>
+                        </optgroup>
+                    </select>
+                    
+                    <label style="margin-left: 15px;">图书购买分类</label>
+                    <select name="tushufenlei" id="tushufenlei" class="form-control">
+                        <option value="new">全新</option>
+                        <option value="used">二手</option>
+                        <option value="multi-used">多次使用</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="liuyan">留言</label>
+                    <textarea name="liuyan" id="liuyan" rows="6" cols="80" class="form-control">请输入您意向书籍的名称、出版社以及相关信息，以便我们更快帮您寻找！上传图书文件会让我们速度更快哦 ！</textarea>
+                </div>
+                <div class="form-group">
+                    <label>上传文件</label>
+                    <input type="file" multiple class="form-control">
+                </div>
+                <div class="btn-group">
+                    <input type="submit" value="提交" class="btn-submit">
+                    <input type="reset" value="重置" class="btn-reset">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal login-modal">
+            <button class="close-modal" id="closeLoginModal">&times;</button>
+            <form action="lab5-42-index.html" method="post" name="login" class="login-form">
+                <h2 class="login-title">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    登录
+                </h2>
+                <div class="form-group">
+                    <label for="login-username">用户名</label>
+                    <input type="text" id="login-username" name="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="login-userword">密码</label>
+                    <input type="password" id="login-userword" name="userword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="login-email">邮箱</label>
+                    <input type="email" id="login-email" name="email" class="form-control">
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="jizhu" name="jizhu">
+                    <label for="jizhu">记住我</label>
+                </div>
+                <div class="link-group">
+                    <a href="#" title="找回密码">忘记密码？</a>
+                    <a href="#" title="注册账号">立即注册</a>
+                </div>
+                <button type="submit" class="btn-login">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    登录
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const subscribeModal = document.getElementById('subscribeModal');
+        const loginModal = document.getElementById('loginModal');
+        const subscribeBtn = document.getElementById('subscribeBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeSubscribeModal = document.getElementById('closeSubscribeModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+
+        subscribeBtn.addEventListener('click', () => {
+            subscribeModal.style.display = 'flex';
+        });
+
+        // 打开登录弹窗
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+
+        // 关闭订阅弹窗
+        closeSubscribeModal.addEventListener('click', () => {
+            subscribeModal.style.display = 'none';
+        });
+
+        // 关闭登录弹窗
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+       
+        
+    </script>
 </body>
 </html>
