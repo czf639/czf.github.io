@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -363,4 +364,371 @@
         </div>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/lab6.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <i class="fa fa-bookmark"></i>
+                <span class="logo-text">书斋</span>
+            </div>
+            <ul class="nav">
+                <li><a href="#">首页</a>
+                    <div class="caidan">
+                        <a href="">热卖图书</a>
+                        <a href="">限时优惠</a>
+                    </div>
+                </li>
+                <li><a href="#">分类</a>
+                    <div class="caidan">
+                        <a href="">传记</a>
+                        <a href="">政治</a>
+                        <a href="">历史</a>
+                        <a href="">小说</a>
+                    </div>
+                </li>
+                <li><a href="#">新书</a>
+                    <div class="caidan">
+                        <a href="">心理学微解析</a>
+                        <a href="">朝花夕拾</a>
+                        <a href="">狂人日记</a>
+                    </div>
+                </li>
+                <li><a href="#">活动</a>
+                    <div class="caidan">
+                        <a href="">减免</a>
+                    </div>
+                </li>
+                <li><a href="">筛选</a>
+                    <div class="caidan">
+                        <a href="">价格从低到高</a>
+                        <a href="">价格从高到低</a>
+                        <a href="">按分类排序</a>
+                        <a href="">按热度排序</a>
+                    </div>
+                </li>
+                <!-- 订阅按钮改为label，关联到subscribeToggle复选框 -->
+                <li>
+                    <label for="subscribeToggle" class="cart-btn">
+                        <i class="fa fa-book"></i>
+                        订阅书籍
+                    </label>
+                </li>
+            </ul>
+            <div class="cart">
+                <!-- 登录按钮改为label，关联到loginToggle复选框 -->
+                <label for="loginToggle" class="cart-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    登录/注册
+                </label>
+                <div class="cart-icon">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车(0)</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="container"> 
+            <aside class="left">
+                <h3><i class="fa fa-list"></i> 图书分类</h3>
+                <ul>
+                    <li><i class="fa-solid fa-book"></i><a href="#">小说 散文</a></li>
+                    <li><i class="fa-solid fa-flask"></i><a href="#">科普类</a></li>
+                    <li><i class="fa-solid fa-book-medical"></i><a href="#">历史类</a></li>
+                    <li><i class="fa-brands fa-artstation"></i><a href="#">艺术类</a></li>
+                    <li><i class="fa-solid fa-book-atlas"></i><a href="#">传记类</a></li>
+                    <li><i class="fa-solid fa-landmark"></i><a href="#">政治类</a></li>
+                    <li><i class="fa-solid fa-heart"></i><a href="#">心理学</a></li>
+                </ul>
+
+                <h3><i class="fa fa-fire"></i> 热卖榜单</h3>
+                <ul>
+                    <li><a href="#">完美世界<br>售价59元</a>
+                        <div class="xinxi">
+                            <a href="">辰东第五部小说《完美世界》是一本连载于起点中文网的东方玄幻类小说，已完结。该作品又称《遮天前传》，告诉读者所有逆境都会过去，挫折会让人变强。</a>
+                        </div>
+                    </li>
+                    <li><a href="#">三体<br>售价289元</a>
+                        <div class="xinxi">
+                            <a href="">《三体》是刘慈欣创作的科幻小说系列，讲述了人类与外星文明的接触与冲突，探讨了科技、文明与人性的深刻主题。</a>
+                        </div>
+                    </li>
+                    <li><a href="#">十万个为什么<br>售价28元</a>
+                        <div class="xinxi">
+                            <a href="">作者：韩启德（总主编）。《十万个为什么》是少年儿童出版社在20世纪60年代初编辑出版的一套青少年科普读物，最新版本是第六版。</a>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+
+            <section class="middle">
+                <h3><i class="fa fa-star"></i> 热门图书</h3>
+                
+                <!-- 轮播图区域 - 自动播放3秒切换 -->
+                <div class="lunbo">
+                    <ul class="img">
+                        <li><span class="span">1</span><img src="./img/py.jpg" alt="Python编程"></li>
+                        <li><span class="span">2</span><img src="./img/ls.jpg" alt="世界历史大全"></li>
+                        <li><span class="span">3</span><img src="./img/qf.jpg" alt="图书轮播"></li>
+                        <li><span class="span">4</span><img src="./img/ys.jpg" alt="艺术的故事"></li>
+                    </ul>
+                </div>
+                
+                <div class="book-list">
+                    <div class="book">
+                        <img src="img/ls.jpg" alt="图书1">
+                        <div class="book-author">世界历史大全</div>
+                        <p class="book-price">¥49.00</p>
+                        <div class="xinxi">
+                            创始人是扬·凡德克拉本（Jan van der Crabben），他于2009年创立了该百科全书。
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="img/py.jpg" alt="图书2">
+                        <div class="book-author">Python编程 从入门到实践</div>
+                        <p class="book-price">¥39.00</p>
+                        <div class="xinxi">
+                            《Python编程 从入门到实践》是2016年人民邮电出版社出版的图书，作者是Eric Matthes。
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="img/ys.jpg" alt="图书3">
+                        <div class="book-author">艺术的故事</div>
+                        <p class="book-price">¥59.00</p>
+                    </div>
+                    <div class="book">
+                        <img src="https://imgt.bookschina.com/2025/10/5929854ct01a.jpg" alt="图书4">
+                        <div class="book-author">365个中国故事</div>
+                        <p class="book-price">¥49.00</p>
+                        <div class="xinxi">
+                            每部选取365个中国故事，涉及神话、民俗、传说、寓言故事，儒、释、道、法、墨、纵横家等诸子百家故事；每日一句国学金句，全年共365条，均配有贴心译文。
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="http://image12.bookschina.com/2022/20221114/1/B8607989.jpg" alt="图书5">
+                        <div class="book-author">中国人的精神生活</div>
+                        <p class="book-price">¥49.00</p>
+                        <div class="xinxi">
+                            本书揭示中国人的精神生活，宣扬中国传统文化的价值，是一战前后世界范围内兴起的东方文化思潮的代表作之一。
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="http://image12.bookschina.com/2015/20150215/B6781583.jpg" alt="图书6">
+                        <div class="book-author">邓稼先传</div>
+                        <p class="book-price">¥49.00</p>
+                        <div class="xinxi">
+                            作者是邓稼先的家人，“两弹一星元勋”之外，还原一个真实可触的邓稼先：爱看京剧、和儿子比赛放爆竹、背牛津词典……一位付出一生奉献人民和国家的科学家。
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="right">
+                <div class="ad-section">
+                    <h3><i class="fa fa-tag"></i> 限时优惠</h3>
+                    <div class="ad-card">
+                        <p><span class="ad-tag">[满减]</span> 全场满299减50，满499减100</p>
+                    </div>
+                    <div class="ad-card">
+                        <p><span class="ad-tag">[新人]</span> 注册即送20元无门槛券</p>
+                    </div>
+                    <div class="ad-card">
+                        <p><span class="ad-tag">[限时]</span> 本店消费满99元赠送《世界大全》</p>
+                    </div>
+                    <div class="ad-card">
+                        <p><span class="ad-tag">[折扣]</span> 精选图书8折起，限时3天</p>
+                    </div>
+                </div>
+
+                <div class="tag-section">
+                    <h3><i class="fa fa-tags"></i> 热门标签</h3>
+                    <div class="tag-list">
+                        <div class="tag">科幻小说</div>
+                        <div class="tag">历史传记</div>
+                        <div class="tag">科普读物</div>
+                        <div class="tag">艺术鉴赏</div>
+                        <div class="tag">编程入门</div>
+                        <div class="tag">儿童绘本</div>
+                        <div class="tag">经典文学</div>
+                        <div class="tag">心理学</div>
+                        <div class="tag">哲学思辨</div>
+                        <div class="tag">职场技能</div>
+                        <div class="tag">传统文化</div>
+                        <div class="tag">悬疑推理</div>
+                        <div class="tag">人物传记</div>
+                        <div class="tag">军事历史</div>
+                    </div>
+                </div>
+
+                <div class="ad-section">
+                    <h3><i class="fa fa-calendar-plus-o"></i> 新书预告</h3>
+                    <div class="ad-card">
+                        <p><span class="ad-tag">[11月]</span> 《龙族》11月底上线</p>
+                    </div>
+                    <div class="ad-card">
+                        <p><span class="ad-tag">[12月]</span> 《活着》纪念装订版12月底发售</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4><i class="fa fa-info-circle"></i> 关于我们</h4>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">招聘需求</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fa fa-headphones"></i> 客户服务</h4>
+                    <ul>
+                        <li><a href="#">购物指南</a></li>
+                        <li><a href="#">售后解决</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fa fa-envelope"></i> 联系方式</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-envelope"></i> 邮箱</a></li>
+                        <li><a href="mailto:2649007726@qq.com">2649007726@qq.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 弹窗触发复选框（隐藏） -->
+    <input type="checkbox" id="subscribeToggle" class="modal-toggle">
+    <input type="checkbox" id="loginToggle" class="modal-toggle">
+
+    <!-- 订阅弹窗 -->
+    <div class="modal-overlay subscribe-modal-overlay">
+        <div class="modal subscribe-modal">
+            <!-- 关闭按钮改为label，关联到subscribeToggle复选框 -->
+            <label for="subscribeToggle" class="close-modal">&times;</label>
+            <form>
+                <h3>订阅书籍</h3>
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="userword">密码</label>
+                    <input type="password" id="userword" name="userword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    性别：
+                    <label><input type="radio" name="nannv" value="male"> 男</label>
+                    <label><input type="radio" name="nannv" value="female"> 女</label>
+                </div>
+                <div class="form-group">
+                    兴趣/阅读意向：
+                    <label><input type="checkbox" name="interest" value="horror"> 灵异恐怖</label>
+                    <label><input type="checkbox" name="interest" value="philosophy"> 哲学思辨</label>
+                    <label><input type="checkbox" name="interest" value="history"> 传统历史</label>
+                    <label><input type="checkbox" name="interest" value="scifi"> 科幻小说</label>
+                    <label><input type="checkbox" name="interest" value="classic"> 名家经典</label>
+                </div>
+                <div class="form-group">
+                    <label>城市</label>
+                    <select name="cities" id="citied" class="form-control">
+                        <optgroup label="直辖市">
+                            <option value="beijing">北京</option>
+                            <option value="shanghai">上海</option>
+                        </optgroup>
+                        <optgroup label="山东省">
+                            <option value="yantai">烟台</option>
+                            <option value="qingdao">青岛</option>
+                            <option value="jinan">济南</option>
+                            <option value="zaozhuang">枣庄</option>
+                            <option value="heze">菏泽</option>
+                            <option value="weifang">潍坊</option>
+                            <option value="tai'an">泰安</option>
+                            <option value="linyi">临沂</option>
+                            <option value="jining">济宁</option>
+                        </optgroup>
+                        <optgroup label="河北省">
+                            <option value="shijiazhuang">石家庄</option>
+                            <option value="baoding">保定</option>
+                            <option value="qinhuangdao">秦皇岛</option>
+                        </optgroup>
+                    </select>
+                    
+                    <label style="margin-left: 15px;">图书购买分类</label>
+                    <select name="tushufenlei" id="tushufenlei" class="form-control">
+                        <option value="new">全新</option>
+                        <option value="used">二手</option>
+                        <option value="multi-used">多次使用</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="liuyan">留言</label>
+                    <textarea name="liuyan" id="liuyan" rows="6" cols="80" class="form-control">请输入您意向书籍的名称、出版社以及相关信息，以便我们更快帮您寻找！上传图书文件会让我们速度更快哦 ！</textarea>
+                </div>
+                <div class="form-group">
+                    <label>上传文件</label>
+                    <input type="file" multiple class="form-control">
+                </div>
+                <div class="btn-group">
+                    <input type="submit" value="提交" class="btn-submit">
+                    <input type="reset" value="重置" class="btn-reset">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 登录弹窗 -->
+    <div class="modal-overlay login-modal-overlay">
+        <div class="modal login-modal">
+            <!-- 关闭按钮改为label，关联到loginToggle复选框 -->
+            <label for="loginToggle" class="close-modal">&times;</label>
+            <form action="lab5-42-index.html" method="post" name="login" class="login-form">
+                <h2 class="login-title">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    登录
+                </h2>
+                <div class="form-group">
+                    <label for="login-username">用户名</label>
+                    <input type="text" id="login-username" name="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="login-userword">密码</label>
+                    <input type="password" id="login-userword" name="userword" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="login-email">邮箱</label>
+                    <input type="email" id="login-email" name="email" class="form-control">
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="jizhu" name="jizhu">
+                    <label for="jizhu">记住我</label>
+                </div>
+                <div class="link-group">
+                    <a href="#" title="找回密码">忘记密码？</a>
+                    <a href="#" title="注册账号">立即注册</a>
+                </div>
+                <button type="submit" class="btn-login">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    登录
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+>>>>>>> da944759444dfd8692034577a1826759c2f68f9c
 </html>
