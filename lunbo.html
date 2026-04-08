@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lunbo</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+    }
+        .lunbo{
+            width: 650px;
+            height: 300px;
+            overflow: hidden;
+            
+        }
+        .img{
+            width: 3900px;
+            height: 300px;
+
+        }
+        .img>li,img{
+         width: 650px;
+         height: 300px;
+
+        }
+        .img>li{
+            float: left;
+            position: relative;
+            animation: img 5s ease 5s infinite alternate;
+        }
+        .span{
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            font-size: 16px;
+            color: #FF3300;
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+            right: 70px;
+            bottom: 20px;
+
+        }
+        @-webkit-keyframes img{
+            0%{left:0}
+            33%{left:-650px}
+            66%{left: -1300px}
+            100%{left:-1950px}
+                
+        }
+
+    </style>
+    
+</head>
+<body><div class="lunbo">
+    <div class="img">
+        <li><span>1</span><img src="./img/py.jpg" alt=""></li>
+        <li><span>1</span><img src="./img/ls.jpg" alt=""></li>
+        <li><span>1</span><img src="./img/qf.jpg" alt=""></li>
+        <li><span>1</span><img src="./img/ys.jpg" alt=""></li>
+    </div>
+    </div>
+    
+</body>
+</html>
