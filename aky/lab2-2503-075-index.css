@@ -1,0 +1,199 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px; /* 给固定导航留出位置 */
+}
+
+/* ======================
+   1. 头部：固定定位 + 浮动
+====================== */
+.header {
+    width: 100%;
+    height: 70px;
+    background: #333;
+    color: white;
+    
+    /* 固定定位 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.logo {
+    float: left;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav {
+    float: right;
+    list-style: none;
+    line-height: 70px;
+}
+
+.nav li {
+    float: left;
+    padding: 0 20px;
+    cursor: pointer; /* 鼠标手型 */
+}
+
+.nav li:hover {
+    background: #ff6600;
+}
+
+/* ======================
+   2. 主体三栏浮动布局
+====================== */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* 清除浮动 */
+}
+
+.left {
+    width: 200px;
+    float: left;
+    
+    /* 相对定位 */
+    position: relative;
+    left: 0;
+    top: 0;
+    
+    /* 盒子模型 */
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-right: 15px;
+}
+
+.middle {
+    width: 770px;
+    float: left;
+    
+    /* 盒子模型 */
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-right: 15px;
+}
+
+.right {
+    width: 200px;
+    float: left;
+    
+    /* 固定定位 */
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    
+    /* 盒子模型 */
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #fff8e1;
+}
+
+/* ======================
+   3. 左侧分类
+====================== */
+.category {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.category li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+    cursor: pointer;
+}
+
+/* ======================
+   4. 图书展示：父相子绝 + 悬停效果
+====================== */
+.book-box {
+    margin: 15px 0;
+}
+
+.book-item {
+    width: 150px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative; /* 父：相对定位 */
+}
+
+.book-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 子：绝对定位 */
+.hot-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+/* 悬停显示 */
+.show-info {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.book-item:hover .show-info {
+    display: block;
+    cursor: pointer;
+}
+
+/* ======================
+   5. 热门推荐：浮动
+====================== */
+.recommend {
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.rec-item {
+    width: 30%;
+    height: 80px;
+    background: #f5f5f5;
+    float: left;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 80px;
+    border: 1px solid #ccc;
+}
+
+/* ======================
+   6. 新书表格
+====================== */
+.new-book {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.new-book th, .new-book td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.new-book th {
+    background: #f5f5f5;
+}
