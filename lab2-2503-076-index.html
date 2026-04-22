@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>墨香书阁 | 图书商城</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/lab2-2503-076-index.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="logo">
+            <i class="fa fa-bookmark"></i>
+            <span class="logo-text">墨香书阁</span>
+        </div>
+        <ul class="nav">
+            <li><a href="#">首页</a>
+                <div class="caidan"><a href="#">热卖图书</a><a href="#">限时优惠</a></div>
+            </li>
+            <li><a href="#">分类</a>
+                <div class="caidan"><a href="#">传记</a><a href="#">政治</a><a href="#">历史</a><a href="#">小说</a></div>
+            </li>
+            <li><a href="#">新书</a>
+                <div class="caidan"><a href="#">心理学微解析</a><a href="#">朝花夕拾</a><a href="#">狂人日记</a></div>
+            </li>
+            <li><a href="#">活动</a>
+                <div class="caidan"><a href="#">减免专区</a><a href="#">满赠好礼</a></div>
+            </li>
+            <li><a href="#">筛选</a>
+                <div class="caidan"><a href="#">价格从低到高</a><a href="#">价格从高到低</a><a href="#">热门排序</a></div>
+            </li>
+        </ul>
+        <div class="cart">
+            <button class="cart-btn" id="subscribeBtn"><i class="fa fa-book"></i> 订阅书籍</button>
+            <button class="cart-btn" id="loginBtn"><i class="fa-solid fa-right-to-bracket"></i> 登录/注册</button>
+            <div class="cart-icon"><i class="fa fa-shopping-cart"></i><span>购物车</span></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="left">
+            <h3><i class="fa fa-list"></i> 图书分类</h3>
+            <ul>
+                <li><i class="fa-solid fa-book"></i> <a href="#">小说 散文</a>
+                    <div class="xinxi">经典文学、现代小说，感受文字魅力。</div>
+                </li>
+                <li><i class="fa-solid fa-flask"></i> <a href="#">科普类</a>
+                    <div class="xinxi">探索科学奥秘，拓展认知边界。</div>
+                </li>
+                <li><i class="fa-solid fa-book-medical"></i> <a href="#">历史类</a>
+                    <div class="xinxi">以史为鉴，读懂古今中外。</div>
+                </li>
+                <li><i class="fa-brands fa-artstation"></i> <a href="#">艺术类</a>
+                    <div class="xinxi">绘画、设计、美学修养。</div>
+                </li>
+                <li><i class="fa-solid fa-book-atlas"></i> <a href="#">传记类</a>
+                    <div class="xinxi">伟人足迹，励志人生。</div>
+                </li>
+                <li><i class="fa-solid fa-landmark"></i> <a href="#">政治类</a>
+                    <div class="xinxi">政治制度、国际关系。</div>
+                </li>
+            </ul>
+            <h3><i class="fa fa-fire"></i> 热卖榜单</h3>
+            <ul>
+                <li><a href="#">完美世界 ¥59</a><div class="xinxi">辰东玄幻经典，逆境成长传奇。</div></li>
+                <li><a href="#">三体 ¥289</a><div class="xinxi">刘慈欣科幻巅峰，宏大宇宙观。</div></li>
+                <li><a href="#">十万个为什么 ¥28</a><div class="xinxi">青少年科普必读，启迪智慧。</div></li>
+            </ul>
+        </aside>
+
+        <section class="middle">
+            <h3><i class="fa fa-star"></i> 热门图书</h3>
+            <div class="book-list">
+                <div class="book">
+                    <img src="https://picsum.photos/id/20/150/180" alt="世界历史">
+                    <div class="book-author">世界历史大全</div>
+                    <p class="book-price">¥49.00</p>
+                    <div class="book-detail">全景式世界史，图文并茂，深度解读文明演进。</div>
+                </div>
+                <div class="book">
+                    <img src="https://picsum.photos/id/0/150/180" alt="Python">
+                    <div class="book-author">Python编程 从入门到实践</div>
+                    <p class="book-price">¥39.00</p>
+                    <div class="book-detail">畅销编程教程，项目实战驱动学习。</div>
+                </div>
+                <div class="book">
+                    <img src="https://picsum.photos/id/104/150/180" alt="艺术的故事">
+                    <div class="book-author">艺术的故事</div>
+                    <p class="book-price">¥59.00</p>
+                    <div class="book-detail">贡布里希经典，艺术史入门必读。</div>
+                </div>
+                <div class="book">
+                    <img src="https://picsum.photos/id/100/150/180" alt="中国故事">
+                    <div class="book-author">365个中国故事</div>
+                    <p class="book-price">¥49.00</p>
+                    <div class="book-detail">神话民俗，每日一则国学智慧。</div>
+                </div>
+                <div class="book">
+                    <img src="https://picsum.photos/id/96/150/180" alt="精神生活">
+                    <div class="book-author">中国人的精神生活</div>
+                    <p class="book-price">¥49.00</p>
+                    <div class="book-detail">传统文化价值观深度剖析。</div>
+                </div>
+                <div class="book">
+                    <img src="https://picsum.photos/id/24/150/180" alt="邓稼先传">
+                    <div class="book-author">邓稼先传</div>
+                    <p class="book-price">¥49.00</p>
+                    <div class="book-detail">两弹元勋真实人生，家国情怀。</div>
+                </div>
+            </div>
+
+            <div class="hot-recommend">
+                <h4><i class="fa fa-fire"></i> 热门推荐</h4>
+                <div class="hot-list">
+                    <span class="hot-item">三体·黑暗森林</span>
+                    <span class="hot-item">活着</span>
+                    <span class="hot-item">你当像鸟飞往你的山</span>
+                    <span class="hot-item">百年孤独</span>
+                    <span class="hot-item">人类简史</span>
+                </div>
+            </div>
+
+            <h4 style="margin: 20px 0 10px 0;"><i class="fa fa-table"></i> 新书上市</h4>
+            <table class="new-book-table">
+                <thead>
+                    <tr><th>书名</th><th>作者</th><th>定价</th><th>上市时间</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>深度学习革命</td><td>凯德·梅茨</td><td>¥89.00</td><td>2025-03</td></tr>
+                    <tr><td>芯片战争</td><td>克里斯·米勒</td><td>¥78.00</td><td>2025-02</td></tr>
+                    <tr><td>埃隆·马斯克传</td><td>沃尔特·艾萨克森</td><td>¥99.00</td><td>2025-01</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <aside class="right">
+            <div class="ad-section">
+                <h3><i class="fa fa-tag"></i> 限时优惠</h3>
+                <div class="ad-card"><p><span class="ad-tag">[满减]</span> 全场满299减50，满499减100</p></div>
+                <div class="ad-card"><p><span class="ad-tag">[新人]</span> 注册即送20元无门槛券</p></div>
+                <div class="ad-card"><p><span class="ad-tag">[限时]</span> 消费满99元赠送畅销书一本</p></div>
+            </div>
+            <div class="tag-section">
+                <h3><i class="fa fa-tags"></i> 热门标签</h3>
+                <div class="tag-list">
+                    <div class="tag">科幻小说</div><div class="tag">历史传记</div><div class="tag">科普读物</div>
+                    <div class="tag">艺术鉴赏</div><div class="tag">编程入门</div><div class="tag">经典文学</div>
+                    <div class="tag">心理学</div><div class="tag">悬疑推理</div><div class="tag">传统文化</div>
+                </div>
+            </div>
+            <div class="ad-section">
+                <h3><i class="fa fa-calendar-plus-o"></i> 新书预告</h3>
+                <div class="ad-card"><p><span class="ad-tag">[11月]</span> 《龙族》全新修订版</p></div>
+                <div class="ad-card"><p><span class="ad-tag">[12月]</span> 《活着》纪念装订版</p></div>
+            </div>
+        </aside>
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col"><h4><i class="fa fa-info-circle"></i> 关于我们</h4><ul><li><a href="#">品牌故事</a></li><li><a href="#">加入我们</a></li></ul></div>
+            <div class="footer-col"><h4><i class="fa fa-headphones"></i> 客户服务</h4><ul><li><a href="#">购物指南</a></li><li><a href="#">售后政策</a></li></ul></div>
+            <div class="footer-col"><h4><i class="fa fa-envelope"></i> 联系方式</h4><ul><li><a href="mailto:book@example.com">666666@193.com</a></li><li><a href="#">在线客服</a></li></ul></div>
+        </div>
+    </footer>
+</div>
+
+<div class="modal-overlay" id="subscribeModal">
+    <div class="modal subscribe-modal">
+        <button class="close-modal" id="closeSubscribeModal">&times;</button>
+        <form>
+            <h3>订阅书籍</h3>
+            <div class="form-group"><label>用户名</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>密码</label><input type="password" class="form-control"></div>
+            <div class="form-group"><label>邮箱</label><input type="email" class="form-control"></div>
+            <div class="form-group">性别：<label><input type="radio" name="gender"> 男</label> <label><input type="radio" name="gender"> 女</label></div>
+            <div class="form-group">兴趣：<label><input type="checkbox"> 科幻</label> <label><input type="checkbox"> 历史</label> <label><input type="checkbox"> 哲学</label></div>
+            <div class="form-group"><label>城市</label><select class="form-control"><option>北京</option><option>上海</option><option>烟台</option></select></div>
+            <div class="form-group"><label>留言</label><textarea rows="3" class="form-control"></textarea></div>
+            <div class="btn-group"><input type="submit" value="提交"><input type="reset" value="重置"></div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay" id="loginModal">
+    <div class="modal login-modal">
+        <button class="close-modal" id="closeLoginModal">&times;</button>
+        <form>
+            <h2 class="login-title"><i class="fa-solid fa-right-to-bracket"></i> 登录</h2>
+            <div class="form-group"><label>用户名</label><input type="text" class="form-control"></div>
+            <div class="form-group"><label>密码</label><input type="password" class="form-control"></div>
+            <div class="form-group"><label>邮箱</label><input type="email" class="form-control"></div>
+            <div class="remember-me"><input type="checkbox"> <label>记住我</label></div>
+            <div class="link-group"><a href="#">忘记密码？</a><a href="#">立即注册</a></div>
+            <button type="button" class="btn-login">登录</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
