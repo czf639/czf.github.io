@@ -5,6 +5,18 @@
     <title>图书商城</title>
     <!-- 引入外部CSS -->
     <link rel="stylesheet" href="lab2-2503-075-index.css">
+    <style>
+        /* 只加这一段登录弹窗样式，不影响你原有界面 */
+        .mask{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:999;}
+        .login-pop{display:none;position:relative;z-index:1000;}
+        .login-box,.register-box{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;background:#fff;padding:30px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.2);}
+        .register-box{display:none;}
+        .input-item{margin-bottom:20px;}
+        .input-item label{display:inline-block;width:70px;}
+        .input-item input{width:280px;height:35px;padding:0 10px;border:1px solid #ccc;border-radius:5px;}
+        .btn-box{text-align:center;}
+        .btn-box button{padding:8px 15px;margin:0 5px;background:#409eff;color:#fff;border:none;border-radius:5px;cursor:pointer;}
+    </style>
 </head>
 <body>
 
@@ -19,7 +31,8 @@
         <li>科技编程</li>
         <li>经济管理</li>
         <li>联系我们</li>
-        <li>登录</li>
+        <!-- 只加了点击事件，其他完全不变 -->
+        <li onclick="showLogin()">登录</li>
     </ul>
 </header>
 
@@ -87,111 +100,86 @@
     </aside>
 </div>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>登录注册一体化</title>
-    <!-- 引入外部CSS样式 -->
-    <link rel="stylesheet" href="css/lab3-2503-075-index.css">
-</head>
-<body>
-    <!-- 背景遮罩层 -->
-    <div class="mask"></div>
-
-    <!-- 父容器：相对定位 -->
-    <div class="container">
-        <!-- 登录面板：默认显示 -->
-        <div class="login-box" id="loginBox">
-            <h2>用户登录</h2>
-            <div class="input-item">
-                <label>用户名：</label>
-                <input type="text" id="loginUser" placeholder="请输入用户名">
-            </div>
-            <div class="input-item">
-                <label>密码：</label>
-                <input type="password" id="loginPwd" placeholder="请输入密码">
-            </div>
-            <div class="btn-box">
-                <button onclick="login()">登录</button>
-                <!-- 点击切换到注册，无超链接跳转 -->
-                <button onclick="switchBox('registerBox')">去注册</button>
-            </div>
+<!-- ================== 登录弹窗（默认隐藏，点击登录才显示） ================== -->
+<div class="mask" id="mask"></div>
+<div class="login-pop" id="loginPop">
+    <div class="login-box" id="loginBox">
+        <h2>用户登录</h2>
+        <div class="input-item">
+            <label>用户名：</label>
+            <input type="text" id="loginUser" placeholder="请输入用户名">
         </div>
-
-        <!-- 注册面板：默认隐藏 -->
-        <div class="register-box" id="registerBox">
-            <h2>用户注册</h2>
-            <div class="input-item">
-                <label>用户名：</label>
-                <input type="text" id="regUser" placeholder="请设置用户名">
-            </div>
-            <div class="input-item">
-                <label>密码：</label>
-                <input type="password" id="regPwd" placeholder="请设置密码">
-            </div>
-            <div class="btn-box">
-                <button onclick="register()">注册</button>
-                <!-- 点击切换到登录，无超链接跳转 -->
-                <button onclick="switchBox('loginBox')">返回登录</button>
-            </div>
+        <div class="input-item">
+            <label>密码：</label>
+            <input type="password" id="loginPwd" placeholder="请输入密码">
+        </div>
+        <div class="btn-box">
+            <button onclick="login()">登录</button>
+            <button onclick="switchBox('registerBox')">去注册</button>
+            <button onclick="closeLogin()">关闭</button>
         </div>
     </div>
 
-    <script>
-        // 1. 切换登录/注册面板（显示/隐藏技术）
-        function switchBox(showId) {
-            // 隐藏所有面板
-            document.getElementById('loginBox').style.display = 'none';
-            document.getElementById('registerBox').style.display = 'none';
-            // 显示目标面板
-            document.getElementById(showId).style.display = 'block';
-        }
+    <div class="register-box" id="registerBox">
+        <h2>用户注册</h2>
+        <div class="input-item">
+            <label>用户名：</label>
+            <input type="text" id="regUser" placeholder="请设置用户名">
+        </div>
+        <div class="input-item">
+            <label>密码：</label>
+            <input type="password" id="regPwd" placeholder="请设置密码">
+        </div>
+        <div class="btn-box">
+            <button onclick="register()">注册</button>
+            <button onclick="switchBox('loginBox')">返回登录</button>
+            <button onclick="closeLogin()">关闭</button>
+        </div>
+    </div>
+</div>
 
-        // 2. 注册功能：保存数据到HTML5本地存储 localStorage
-        function register() {
-            let username = document.getElementById('regUser').value.trim();
-            let password = document.getElementById('regPwd').value.trim();
-
-            // 非空验证
-            if (!username || !password) {
-                alert('用户名和密码不能为空！');
-                return;
-            }
-
-            // 保存到本地存储（键值对形式）
-            localStorage.setItem('username', username);
-            localStorage.setItem('password', password);
-            alert('注册成功！请登录');
-            
-            // 注册成功自动切换到登录面板
-            switchBox('loginBox');
-        }
-
-        // 3. 登录功能：读取本地存储比对验证
-        function login() {
-            let loginUser = document.getElementById('loginUser').value.trim();
-            let loginPwd = document.getElementById('loginPwd').value.trim();
-
-            // 读取本地存储的注册信息
-            let localUser = localStorage.getItem('username');
-            let localPwd = localStorage.getItem('password');
-
-            // 验证
-            if (!localUser) {
-                alert('尚未注册用户，请先注册！');
-                switchBox('registerBox');
-                return;
-            }
-
-            if (loginUser === localUser && loginPwd === localPwd) {
-                alert('登录成功！');
-            } else {
-                alert('用户名或密码错误！');
-            }
-        }
-    </script>
+<script>
+// 打开登录弹窗
+function showLogin(){
+    document.getElementById('mask').style.display='block';
+    document.getElementById('loginPop').style.display='block';
+    switchBox('loginBox');
+}
+// 关闭登录弹窗
+function closeLogin(){
+    document.getElementById('mask').style.display='none';
+    document.getElementById('loginPop').style.display='none';
+}
+// 切换面板
+function switchBox(showId){
+    document.getElementById('loginBox').style.display='none';
+    document.getElementById('registerBox').style.display='none';
+    document.getElementById(showId).style.display='block';
+}
+// 注册
+function register(){
+    let user=document.getElementById('regUser').value.trim();
+    let pwd=document.getElementById('regPwd').value.trim();
+    if(!user||!pwd){alert('用户名和密码不能为空！');return;}
+    localStorage.setItem('username',user);
+    localStorage.setItem('password',pwd);
+    alert('注册成功！');
+    switchBox('loginBox');
+}
+// 登录
+function login(){
+    let user=document.getElementById('loginUser').value.trim();
+    let pwd=document.getElementById('loginPwd').value.trim();
+    let localUser=localStorage.getItem('username');
+    let localPwd=localStorage.getItem('password');
+    if(!localUser){alert('请先注册！');switchBox('registerBox');return;}
+    if(user===localUser&&pwd===localPwd){
+        alert('登录成功！');
+        closeLogin();
+    }else{
+        alert('用户名或密码错误！');
+    }
+}
+</script>
 </body>
 </html>
