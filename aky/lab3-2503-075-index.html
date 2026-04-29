@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图书商城</title>
+    <!-- 引入外部CSS -->
+    <link rel="stylesheet" href="lab2-2503-075-index.css">
+</head>
+<body>
+
+<!-- 头部：固定定位 + 浮动 -->
+<header class="header">
+    <div class="logo">
+        <img src="https://ts2.tc.mm.bing.net/th/id/OIP-C.6fxesIOCeQh-1TeZ82a8dQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Logo">
+    </div>
+    <ul class="nav">
+        <li>首页</li>
+        <li>文学小说</li>
+        <li>科技编程</li>
+        <li>经济管理</li>
+        <li>联系我们</li>
+        <li>登录</li>
+    </ul>
+</header>
+
+<!-- 主体容器 -->
+<div class="container">
+
+    <!-- 左侧栏：相对定位 -->
+    <aside class="left">
+        <h2>图书分类</h2>
+        <ul class="category">
+            <li>计算机图书</li>
+            <li>文学名著</li>
+            <li>少儿读物</li>
+            <li>考试考证</li>
+            <li>历史传记</li>
+        </ul>
+    </aside>
+
+    <!-- 中间内容区 -->
+    <main class="middle">
+        <h2>图书展示区</h2>
+        <div class="book-box">
+            <!-- 父相子绝：父元素相对定位 -->
+            <div class="book-item">
+                <img src="https://ts2.tc.mm.bing.net/th/id/OIP-C.Qcioj2UPhuj75jikY2YxrwHaKB?rs=1&pid=ImgDetMain&o=7&rm=3" alt="图书封面">
+                <!-- 子元素绝对定位 -->
+                <div class="hot-tag">热销</div>
+                <!-- 悬停显示 -->
+                <div class="show-info">点击查看详情</div>
+            </div>
+        </div>
+
+        <h2>热门推荐</h2>
+        <div class="recommend">
+            <div class="rec-item">推荐1</div>
+            <div class="rec-item">推荐2</div>
+            <div class="rec-item">推荐3</div>
+        </div>
+
+        <h2>新书上市</h2>
+        <table class="new-book">
+            <tr>
+                <th>书名</th>
+                <th>价格</th>
+                <th>出版时间</th>
+            </tr>
+            <tr>
+                <td>HTML从入门到精通</td>
+                <td>59元</td>
+                <td>2025-01</td>
+            </tr>
+            <tr>
+                <td>CSS实战</td>
+                <td>49元</td>
+                <td>2025-02</td>
+            </tr>
+        </table>
+    </main>
+
+    <!-- 右侧栏：固定定位 -->
+    <aside class="right">
+        <h3>促销广告</h3>
+        <p>满100减20</p>
+        <p>新用户立减10元</p>
+    </aside>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册一体化</title>
+    <!-- 引入外部CSS样式 -->
+    <link rel="stylesheet" href="css/lab3-2503-075-index.css">
+</head>
+<body>
+    <!-- 背景遮罩层 -->
+    <div class="mask"></div>
+
+    <!-- 父容器：相对定位 -->
+    <div class="container">
+        <!-- 登录面板：默认显示 -->
+        <div class="login-box" id="loginBox">
+            <h2>用户登录</h2>
+            <div class="input-item">
+                <label>用户名：</label>
+                <input type="text" id="loginUser" placeholder="请输入用户名">
+            </div>
+            <div class="input-item">
+                <label>密码：</label>
+                <input type="password" id="loginPwd" placeholder="请输入密码">
+            </div>
+            <div class="btn-box">
+                <button onclick="login()">登录</button>
+                <!-- 点击切换到注册，无超链接跳转 -->
+                <button onclick="switchBox('registerBox')">去注册</button>
+            </div>
+        </div>
+
+        <!-- 注册面板：默认隐藏 -->
+        <div class="register-box" id="registerBox">
+            <h2>用户注册</h2>
+            <div class="input-item">
+                <label>用户名：</label>
+                <input type="text" id="regUser" placeholder="请设置用户名">
+            </div>
+            <div class="input-item">
+                <label>密码：</label>
+                <input type="password" id="regPwd" placeholder="请设置密码">
+            </div>
+            <div class="btn-box">
+                <button onclick="register()">注册</button>
+                <!-- 点击切换到登录，无超链接跳转 -->
+                <button onclick="switchBox('loginBox')">返回登录</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 切换登录/注册面板（显示/隐藏技术）
+        function switchBox(showId) {
+            // 隐藏所有面板
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('registerBox').style.display = 'none';
+            // 显示目标面板
+            document.getElementById(showId).style.display = 'block';
+        }
+
+        // 2. 注册功能：保存数据到HTML5本地存储 localStorage
+        function register() {
+            let username = document.getElementById('regUser').value.trim();
+            let password = document.getElementById('regPwd').value.trim();
+
+            // 非空验证
+            if (!username || !password) {
+                alert('用户名和密码不能为空！');
+                return;
+            }
+
+            // 保存到本地存储（键值对形式）
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+            alert('注册成功！请登录');
+            
+            // 注册成功自动切换到登录面板
+            switchBox('loginBox');
+        }
+
+        // 3. 登录功能：读取本地存储比对验证
+        function login() {
+            let loginUser = document.getElementById('loginUser').value.trim();
+            let loginPwd = document.getElementById('loginPwd').value.trim();
+
+            // 读取本地存储的注册信息
+            let localUser = localStorage.getItem('username');
+            let localPwd = localStorage.getItem('password');
+
+            // 验证
+            if (!localUser) {
+                alert('尚未注册用户，请先注册！');
+                switchBox('registerBox');
+                return;
+            }
+
+            if (loginUser === localUser && loginPwd === localPwd) {
+                alert('登录成功！');
+            } else {
+                alert('用户名或密码错误！');
+            }
+        }
+    </script>
+</body>
+</html>
