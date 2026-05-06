@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>图书平台</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/lab6.css">
+    <link rel="stylesheet" href="./css/lab4-2503-076-index.css">
 </head>
 <body>
+    <input type="checkbox" id="subscribeToggle" class="modal-toggle">
+    <input type="checkbox" id="loginToggle" class="modal-toggle">
+    
     <div class="wrapper">
         <header class="header">
             <div class="logo">
@@ -49,7 +52,7 @@
                         <a href="">按热度排序</a>
                     </div>
                 </li>
-                <!-- 订阅按钮改为label，关联到subscribeToggle复选框 -->
+
                 <li>
                     <label for="subscribeToggle" class="cart-btn">
                         <i class="fa fa-book"></i>
@@ -58,7 +61,12 @@
                 </li>
             </ul>
             <div class="cart">
-                <!-- 登录按钮改为label，关联到loginToggle复选框 -->
+    
+                <div class="search-box" style="display: flex; align-items: center; gap: 5px;">
+                    <i class="fa fa-search" style="font-size: 14px;"></i>
+                    <span style="font-size: 14px;">搜索</span>
+                </div>
+
                 <label for="loginToggle" class="cart-btn">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     登录/注册
@@ -106,7 +114,6 @@
             <section class="middle">
                 <h3><i class="fa fa-star"></i> 热门图书</h3>
                 
-                <!-- 轮播图区域 - 自动播放3秒切换 -->
                 <div class="lunbo">
                     <ul class="img">
                         <li><span class="span">1</span><img src="./img/py.jpg" alt="Python编程"></li>
@@ -241,14 +248,8 @@
         </footer>
     </div>
 
-    <!-- 弹窗触发复选框（隐藏） -->
-    <input type="checkbox" id="subscribeToggle" class="modal-toggle">
-    <input type="checkbox" id="loginToggle" class="modal-toggle">
-
-    <!-- 订阅弹窗 -->
     <div class="modal-overlay subscribe-modal-overlay">
         <div class="modal subscribe-modal">
-            <!-- 关闭按钮改为label，关联到subscribeToggle复选框 -->
             <label for="subscribeToggle" class="close-modal">&times;</label>
             <form>
                 <h3>订阅书籍</h3>
@@ -325,10 +326,8 @@
         </div>
     </div>
 
-    <!-- 登录弹窗 -->
     <div class="modal-overlay login-modal-overlay">
         <div class="modal login-modal">
-            <!-- 关闭按钮改为label，关联到loginToggle复选框 -->
             <label for="loginToggle" class="close-modal">&times;</label>
             <form action="lab5-42-index.html" method="post" name="login" class="login-form">
                 <h2 class="login-title">
